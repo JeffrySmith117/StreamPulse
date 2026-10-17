@@ -35,3 +35,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# Logs locais e de travamento da JVM
+backend.log
+hs_err_pid*.log
+replay_pid*.log
