@@ -34,7 +34,7 @@ docker compose -f "$root\docker-compose.yml" up -d
 
 # 4. Back-end em outra janela
 Write-Host "==> Iniciando back-end em outra janela..."
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "java -Xmx384m -XX:+UseSerialGC -jar '$jar'"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "java -Xmx320m -Xss512k -XX:+UseSerialGC -XX:TieredStopAtLevel=1 -XX:ReservedCodeCacheSize=48m -XX:MaxMetaspaceSize=160m -jar '$jar'"
 
 Write-Host "==> Aguardando o back-end na porta 8080..."
 while ($true) {
